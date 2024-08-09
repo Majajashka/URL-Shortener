@@ -3,9 +3,9 @@ from typing import TypeVar, Generic
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from src.infrastructure.database.models import BaseModel
+from src.infrastructure.database.models import Base
 
-Model = TypeVar('Model', bound=BaseModel, covariant=True, contravariant=False)
+Model = TypeVar('Model', bound=Base, covariant=True, contravariant=False)
 
 
 class BaseRepo(Generic[Model]):
