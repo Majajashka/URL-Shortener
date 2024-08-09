@@ -8,7 +8,7 @@ from src.core.models.dto import UserDTO
 class User(Base, TimestampMixin):
     __tablename__ = 'users'
 
-    id = Mapped[int] = mapped_column(BigInteger, autoincrement=True, primary_key=True)
+    id: Mapped[int] = mapped_column(BigInteger, autoincrement=True, primary_key=True)
     user_id: Mapped[int] = mapped_column(BigInteger, unique=True, nullable=False)
     login: Mapped[str] = mapped_column(String(30), nullable=False)
     email: Mapped[str] = mapped_column(String(255), unique=True)
