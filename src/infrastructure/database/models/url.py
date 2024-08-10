@@ -16,4 +16,4 @@ class ShortURL(Base, TimestampMixin):
     user = relationship("User", back_populates="shortened_urls")
 
     def to_dto(self) -> ShortURLDTO:
-        return ShortURLDTO.from_orm(self)
+        return ShortURLDTO.model_validate(self)

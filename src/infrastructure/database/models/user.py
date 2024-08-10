@@ -16,4 +16,4 @@ class User(Base, TimestampMixin):
     password_salt: Mapped[bytes] = mapped_column(LargeBinary, nullable=False)
 
     def to_dto(self) -> UserDTO:
-        return UserDTO.from_orm(self)
+        return UserDTO.model_validate(self)
